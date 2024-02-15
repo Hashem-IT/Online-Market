@@ -1,0 +1,20 @@
+<html lxmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div class="sidenav">
+    <h2 class="bigbazar">BigBazar</h2>
+    <a sec:authorize="!isAuthenticated()" th:href="@{/login}">Anmelden</a>
+    <a sec:authorize="isAuthenticated()" th:href="@{/kontobearbeiten}">Konto bearbeiten</a>
+    <a sec:authorize="isAuthenticated()"  th:href="@{/shoppingcart}">Mein Warenkorb</a>
+    <a sec:authorize="isAuthenticated()"  th:href="@{/produktadd}">Produkt einfügen</a>
+    <a sec:authorize="isAuthenticated()"  th:href="@{/kontoDelete}">Konto löschen</a>
+    <a sec:authorize="isAuthenticated()" th:href="@{/logout}">Abmelden</a>
+</div>
+
+<div class="topnav">
+    <a class="active" th:href="@{/}">Home</a>
+    <div class="search-container">
+        <form method="post" th:action="@{/productsearch}">
+            <input type="text" placeholder="Search.." name="searchterm">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>

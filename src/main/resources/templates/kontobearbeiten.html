@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Konto bearbeiten</title>
+    <meta charset="UTF-8">
+    <title>Registrierung</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body background ="https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg "  background-repeat:no-repeat background-position:center background-size:cover padding:10px>
+
+   <div class="topnav1">
+       <a class="active1" th:href="@{/}">Home</a>
+   </div>
+    <div class="main">
+        <div class="container">
+            <div class="login-form">
+                <div class="main-div">
+                    <div class="panel">
+                        <h2>Meine Daten</h2>
+                        <form method="post" th:object="${customer}" th:action="@{/kontobearbeiten}">
+                            <label>Email Addresse</label>
+                            <input type="email" th:field="*{email}" class="span3" disabled="true">
+                            <label>Vorname</label>
+                            <input type="text" th:field="*{personalData.firstName}" class="span3">
+                            <label>Nachname</label>
+                            <input type="text" th:field="*{personalData.lastName}" class="span3">
+                            <label>Gender</label>
+                            <select th:field="*{personalData.gender}" class="span3">
+                                <option th:each="genderOpt : ${T(de.Hashem.bigbazar.entity.Gender).values()}"
+                                        th:value="${genderOpt}" th:text="${genderOpt}"></option>
+                            </select>
+                            <label>Geburtsdatum</label>
+                            <input type="text" th:field="*{personalData.birthdate}" placeholder="dd.mm.yyyy" class="span3" required>
+                            <label>Land</label>
+                            <input type="text" th:field="*{personalData.address.country}" class="span3" placeholder="Deutschland" required>
+                            <label>PLZ</label>
+                            <input type="text" th:field="*{personalData.address.postalNumber}" class="span3" required>
+                            <label>Straße</label>
+                            <input type="text" th:field="*{personalData.address.streetName}" class="span3" required>
+                            <label>Hausnummer</label>
+                            <input type="text" th:field="*{personalData.address.houseNumber}" class="span3" required>
+                            <label>IBAN</label>
+                            <input type="text" th:field="*{personalData.iban}" class="span3" required>
+                            <label>Bank-ID</label>
+                            <input type="text" th:field="*{personalData.bankAccountId}" class="span3" required>
+                            <label>Bank-Passwort</label>
+                            <input type="text" th:field="*{personalData.bankPassword}" class="span3" required>
+                            <input type="submit" value="Ändern" class="btn btn-primary pull-right">
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

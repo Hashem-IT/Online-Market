@@ -1,0 +1,31 @@
+.scroll-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.scroll-container {
+    margin-top: 100px;
+    padding: 10px;
+    background: white;
+    width: 600px;
+    height: 850px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+
+
+}
+.scroll-container1 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.scroll-container1 {
+    margin-top: 100px;
+    padding: 10px;
+    background: white;
+    width: 400px;
+    height: 400px;
+
+
+}

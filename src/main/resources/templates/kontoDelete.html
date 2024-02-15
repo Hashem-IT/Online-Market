@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Konto bearbeiten</title>
+    <meta charset="UTF-8">
+    <title>Registrierung</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/ergebnis.css}">
+</head>
+
+<body background ="https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg "  background-repeat:no-repeat background-position:center background-size:cover padding:10px>
+<div class="topnav1">
+    <a class="active1" th:href="@{/}">Home</a>
+</div>
+<div class="container1">
+    <div class="login-form">
+        <div >
+            <div class="scroll-container1" >
+                <div >
+                  <div>
+                        <H1>Delete Account</H1>
+                            <form method="get" th:object="${customer}"  th:action="@{/kontoDelete}">
+                                <label>Email Addresse</label>
+                                <input type="email" th:field="*{email}" class="span3" disabled="true">
+                                <label>Vorname</label>
+                                <input type="text" th:field="*{personalData.firstName}" class="span3"disabled="true">
+                                <label>Nachname</label>
+                                <input type="text" th:field="*{personalData.lastName}" class="span3"disabled="true">
+                       </form>
+                        <form method="get" th:object="${customer}"  th:action="@{/kontoDeletee}">
+                                <input type="submit" value="Delete" class="btn btn-primary pull-right">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>&ndash;&gt;
+
+
+
+</html>

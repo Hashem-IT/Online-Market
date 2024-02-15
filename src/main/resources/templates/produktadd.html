@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Konto bearbeiten</title>
+    <meta charset="UTF-8">
+    <title>Registrierung</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body background ="https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg "  background-repeat:no-repeat background-position:center background-size:cover padding:10px>
+<div class="topnav1">
+    <a class="active1" th:href="@{/}">Home</a>
+</div>
+<div class="container">
+    <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+                <h2>Produkt Einfügen</h2>
+                <form method="post"  th:object="${newprodukt}"  th:action="@{/produktadd}">
+                    <label>Produkt Name</label>
+                    <input type="text"  class="span3" name="name"  required>
+                    <label>Produkt Beschreibung</label>
+                    <input type="text" class="span3" name="description"  required>
+                    <label>height</label>
+                    <input type="text" class="span3" name="heightInMM"  required>
+                    <label>length</label>
+                    <input type="text" class="span3" name="lengthInMM"  required>
+                    <label>PreisN</label>
+                    <input type="text" class="span3" name="netto"  required>
+                    <label>PreisB</label>
+                    <input type="text" class="span3" name="brutto"  required>
+                    <label>Tax</label>
+                    <input type="text" class="span3" name="tax"  required>
+                    <label>Weight</label>
+                    <input type="text" class="span3" name="weightInGram"  required>
+                    <label>Width</label>
+                    <input type="text" class="span3" name="widthInMM"  required>
+                    <button type="submit" value="Add" class="btn btn-primary">Einfügen</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
